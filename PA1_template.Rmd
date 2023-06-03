@@ -29,7 +29,7 @@ Steps <- steps %>%
 
 
 Generate a histogram to show distribution of Daily Step Count
-```{r steps_hist1}
+```{r total_steps_per_day_histogram}
 ggplot(Steps, aes(x=dailySteps)) + geom_histogram(color="blue", fill="lightblue") +
   labs(
     title = "Histogram showing distribution of daily steps by number of days",
@@ -45,7 +45,7 @@ summarySteps
 ```
 
 ## What is the average daily activity pattern?
-```{r pattern}
+```{r time_series_average_steps}
 stepIntervals <- steps %>% 
   group_by(interval) %>% 
   summarize(meanSteps = mean(steps, na.rm=TRUE))
@@ -78,7 +78,7 @@ Steps_i <- t %>%
   summarize(dailySteps = sum(steps))
 ```
 Make a histogram of the total number of steps taken each day with imputed values for missing
-```{r plot_steps2}
+```{r total_steps_per_day__with_imputed_vals_histogram}
 ggplot(Steps_i, aes(x=dailySteps)) + geom_histogram(color="blue", fill="lightblue") +
   labs(
     title = "Histogram showing distribution of daily steps by number of days with imputed values for NAs",
@@ -97,7 +97,7 @@ for the total step count are much closer to each other.
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
-```{r weekdays}
+```{r compare_weekdays_weekends}
 t$weekday <- c("Weekend", "Weekday", "Weekday",    
                    "Weekday", "Weekday", "Weekday",
                    "Weekend")[as.POSIXlt(t$date)$wday + 1]

@@ -66,7 +66,7 @@ ggplot(Steps, aes(x=dailySteps)) + geom_histogram(color="blue", fill="lightblue"
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-![](PA1_template_files/figure-html/steps_hist1-1.png)<!-- -->
+![](PA1_template_files/figure-html/total_steps_per_day_histogram-1.png)<!-- -->
 
 Mean and Median of the total number of steps taken per day 
 
@@ -98,7 +98,7 @@ ggplot(data=stepIntervals, aes(x=interval, y=meanSteps)) +
   ) 
 ```
 
-![](PA1_template_files/figure-html/pattern-1.png)<!-- -->
+![](PA1_template_files/figure-html/time_series_average_steps-1.png)<!-- -->
 
 ```r
 stepIntervals[which.max(stepIntervals$meanSteps),]
@@ -151,7 +151,7 @@ ggplot(Steps_i, aes(x=dailySteps)) + geom_histogram(color="blue", fill="lightblu
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-![](PA1_template_files/figure-html/plot_steps2-1.png)<!-- -->
+![](PA1_template_files/figure-html/total_steps_per_day__with_imputed_vals_histogram-1.png)<!-- -->
 
 Calculate and report the mean and median of the total number of steps taken per day (with imputed values)
 
@@ -201,6 +201,6 @@ ggplot(Steps_days, aes(x=interval, y=avg_dailySteps)) +
   labs(caption="Includes imputed values")
 ```
 
-![](PA1_template_files/figure-html/weekdays-1.png)<!-- -->
+![](PA1_template_files/figure-html/compare_weekdays_weekends-1.png)<!-- -->
   
   It seems that on weekends, there are more steps per day and they are spread out more evenly throughout the day
